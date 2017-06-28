@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
+ Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<title>sample2</title>
+		<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
+		<script type="text/javascript">
+		$(function(){
+		
+			setTimeout(function(){
+			
+				var $li = $("#second"); // 그냥 쓰는거보다 변수에 넣어서 적용하는 것이 빠르다. 
+				
+				$("#second").css("color", "#f00");
+				
+				console.log($li.length);
+				
+				
+			}, 1000);
+			
+			
+			
+			
+			
+			
+		});
+		</script>
+	</head>
+	<body>
+	
+		<ul>
+			<li id="first"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+			<li id="second"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+			<li id="third"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+			<li id="fourth"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+		</ul>
+
+	</body>
+</html>

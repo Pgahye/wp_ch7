@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+	$( function() {
+	
+		$("a").attr({
+			
+			"href" : "http://www.bitacademy.com",
+			"title" : "홈페이지가기",
+			"target" : "_black"
+		});
+		
+		console.log($("a").attr("title"));
+		
+		console.log($("a").attr("data-no"));
+		
+		console.log($("a").data("no")); //html 5부터 지원 
+		
+		
+		
+} );  
+</script>
+</head>
+<body>
+
+<h1><a href="" title="" data-no="10">홈페이지 가기</a></h1>
+
+</body>
+</html>
