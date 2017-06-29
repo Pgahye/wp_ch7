@@ -10,7 +10,8 @@
 		<script type="text/javascript">
 			$(function(){
 				$("button").click(function(){
-					$("p").load("./sample1.txt");
+					$("p").load("/wp_js2/sample1.txt");
+					console.log("non-blocking 통신이기 때문에 여기가 먼저 실행될수도 있음 ");
 				});
 			});
 		</script>

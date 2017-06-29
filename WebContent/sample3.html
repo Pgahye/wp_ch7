@@ -10,11 +10,28 @@
 		<script type="text/javascript">
 $(function(){
 	$.ajax({
-		url: 'sample3.xml',
+		url: '/wp_js2/sample3.xml',
 		dataType: 'xml',
-		success : function(data){
-			$("item",data).each(function(){
-				$("dl").append("<dt><a href='"+$("link",this).text()+"'>"+$("title",this).text()+"</a></dt><dd>"+$("description",this).text()+"</dd>");
+		success : function(response){
+			
+		//console.log(response);	
+		
+		$("item",response).each(function(){
+			
+			console.log(this);
+			
+			var htmls = "<dt>"+
+						$("title", this).text()+
+						"</dt>"+
+			
+						"<dd>"+
+						$("description", this).text()+
+						"</dd>";
+						
+						
+					$("dl").append(htmls);	
+			
+				//$("dl").append("<dt><a href='"+$("link",this).text()+"'>"+$("title",this).text()+"</a></dt><dd>"+$("description",this).text()+"</dd>");
 			});
 		}
 	});
