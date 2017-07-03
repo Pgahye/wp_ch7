@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.jx372-alert	{
+	padding: 20px 60px;
+	margin: 20px 50px;
+	border: 1px solid #aaa;
+	border-radius: 6px;
+	background-color:#d0d0d0;
+	color: #999;
+	font-weight:bold;
+	font-size:1.1em;
+	width:120px;
+	text-align:center; 
+}
+</style>
+<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
+<script>
+//jquery plug-in alert
+(function( $ ) {
+	$.fn.alert = function( colorAlert, colorNormal, duration, count ){
+		var $el = $(this);
+		var toggle = false;
+		var tick = 0;
+		var intervalId = setInterval( function(){
+			
+			if( toggle === false ){
+				$el.css( "backgroundColor", colorAlert );
+			} else {
+				$el.css( "backgroundColor", colorNormal );
+				tick++;
+				console.log( $el.attr("id") + ":" + tick );
+			}
+			
+			if( count === tick ){
+				clearInterval( intervalId );
+			}
+			
+			toggle = !toggle;
+			
+		}, duration);
+	}
+	
+})(jQuery);
+$(function(){
+	$( "#test-fire" ).click( function(){
+		$( "#fire-alert" ).alert( "#f00", "#d0d0d0", 1000, 5 );
+	})
+	$( "#test-invasion" ).click( function(){
+		$( "#invasion-alert" ).alert( "#00f", "#d0d0d0", 500, 10 );
+	})
+});
+</script>
+</head>
+<body>
+	<h1 id="fire-alert" class="jx372-alert">불났다!</h1>
+
+	<div id="invasion-alert" class="jx372-alert">도둑놈 들어옴!</div>
+
+	<button id="test-fire">테스트(불)</button>	
+	<button id="test-invasion">테스트(도둑놈)</button>	
+</body>
+</html>
